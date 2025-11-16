@@ -1,5 +1,6 @@
-import UserProfile from './components/UserProfile.jsx';
-import UserContext from './UserContext';
+// src/App.jsx
+import { UserContext } from './UserContext';
+import UserProfile from './UserProfile.jsx';
 
 function App() {
   const userData = { name: 'Jane Doe', email: 'jane.doe@example.com' };
@@ -11,6 +12,7 @@ function App() {
   );
 }
 export default App;
+
 
 
 
