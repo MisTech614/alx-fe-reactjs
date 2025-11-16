@@ -1,22 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import reactLogo from './components/react.svg'; // the react.svg is in components/ 
+import viteLogo from '/vite.svg';               // the vite.sg is in public/
+import './App.css';
+import WelcomeMessage from './components/WelcomeMessage.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // This is a counter state
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
+      {/* Your custom component */}
+      <div className="welcome-section">
+        <WelcomeMessage />
+      </div>
+
+      {/* Logos section */}
+      <div className="logo-section">
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
+
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+
       <h1>Vite + React</h1>
+
+      {/* Counter card */}
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -25,11 +37,13 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
+
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
