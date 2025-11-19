@@ -25,7 +25,7 @@ const EditRecipeForm = ({ recipeId }) => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    event.preventDefault();
 
     updateRecipe({
       ...recipe,
