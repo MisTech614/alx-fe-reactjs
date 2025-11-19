@@ -9,7 +9,7 @@ import SearchBar from './components/SearchBar';
 import RecipeDetails from './components/RecipeDetails.jsx';
 import { useParams } from 'react-router-dom';
 
-// Wrapper component for route param handling
+// Wrapper component for Router param handling
 const RecipeDetailsPage = () => {
   const { id } = useParams();
   const recipeId = Number(id); // we used numeric IDs (Date.now / numbers)
