@@ -4,7 +4,7 @@ import DeleteRecipeButton from './DeleteRecipeButton.jsx';
 
 const RecipeDetails = ({ recipeId }) => {
   const recipe = useRecipeStore((state) =>
-    state.recipes.find((r) => r.id === recipeId)
+    state.recipes.find((r) => recipe.id === recipeId)
   );
 
   if (!recipe) {
