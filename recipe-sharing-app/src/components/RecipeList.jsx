@@ -3,14 +3,21 @@ import { Link } from 'react-router-dom';
 import { useRecipeStore } from './recipeStore';
 
 const RecipeList = () => {
-  const searchTerm = useRecipeStore((s) => s.searchTerm);
-  const recipes = useRecipeStore((s) => s.recipes);
-  const filteredRecipes = useRecipeStore((s) => s.filteredRecipes);
+  const recipes = useRecipeStore((state) => state.recipes);
+  const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
+  const searchTerm = useRecipeStore((state) => state.searchTerm);
+  const ingredientFilter = useRecipeStore((state) => state.ingredientFilter);
+  const maxPrepTime = useRecipeStore((state) => state.maxPrepTime);
 
-  const listToShow = searchTerm.trim() ? filteredRecipes : recipes;
+  const isFiltering =
+    searchTerm.trim() !== '' ||
+    ingredientFilter.trim() !== '' ||
+    maxPrepTime !== '';
+
+  const listToShow = isFiltering ? filteredRecipes : recipes;
 
   if (listToShow.length === 0) {
-    return <p>No matching recipes found.</p>;
+    return <p>No recipes match your filters.</p>;
   }
 
   return (
@@ -28,11 +35,23 @@ const RecipeList = () => {
         >
           <h3>{recipe.title}</h3>
           <p>{recipe.description}</p>
-          <Link to={`/recipes/${recipe.id}`}>View details</Link>
+
+          {Array.isArray(recipe.ingredients) && recipe.ingredients.length > 0 && (
+            <p style={{ fontSize: '0.9rem' }}>
+              <strong>Ingredients:</strong> {recipe.ingredients.join(', ')}
+            </p>
+          )}
+
+          {typeof recipe.prepTime === 'number' && (
+            <p style={{ fontSize: '0.9rem' }}>
+              <strong>Prep time:</strong> {recipe.prepTime} minutes
+            </p>
+          )}
         </div>
       ))}
     </div>
   );
 };
-export default RecipeList;
+export default RecipeList; 
+
 

@@ -35,6 +35,7 @@ function App() {
       }}
     >
       <h1>Recipe Sharing App</h1>
+      <p>Search and filter recipes by name, ingredient, or prep time.</p>
 
       <Routes>
         <Route path="/" element={<HomePage />} />
