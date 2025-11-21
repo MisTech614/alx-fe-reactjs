@@ -19,7 +19,7 @@ export const useRecipeStore = create((set, get) => ({
   searchTerm: '',
   filteredRecipes: [],
 
-  // ---- ACTIONS: CRUD ----
+  // ---- ACTIONS: CRUD setRecipes ----
   addRecipe: (newRecipe) => {
     set(
       (state) => ({
