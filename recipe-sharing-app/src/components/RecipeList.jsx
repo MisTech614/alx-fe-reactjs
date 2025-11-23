@@ -1,6 +1,7 @@
 // src/components/RecipeList.jsx
 import { Link } from 'react-router-dom';
 import { useRecipeStore } from './recipeStore';
+import FavoriteButton from './FavoriteButton';
 
 const RecipeList = () => {
   const recipes = useRecipeStore((state) => state.recipes);
@@ -47,6 +48,8 @@ const RecipeList = () => {
               <strong>Prep time:</strong> {recipe.prepTime} minutes
             </p>
           )}
+          {/* Favorite toggle button */}
+          <FavoriteButton recipeId={recipe.id} />
         </div>
       ))}
     </div>

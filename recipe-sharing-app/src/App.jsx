@@ -7,6 +7,8 @@ import AddRecipeForm from './components/AddRecipeForm.jsx';
 import RecipeList from './components/RecipeList.jsx';
 import SearchBar from './components/SearchBar';
 import RecipeDetails from './components/RecipeDetails.jsx';
+import FavoritesList from './components/FavoritesList.jsx';
+import RecommendationsList from './components/RecommendationsList.jsx';
 import { useParams } from 'react-router-dom';
 
 // Wrapper component for Router param handling
@@ -21,6 +23,8 @@ const HomePage = () => (
     <SearchBar />
     <AddRecipeForm />
     <RecipeList />
+    <FavoritesList />
+    <RecommendationsList />
   </>
 );
 
