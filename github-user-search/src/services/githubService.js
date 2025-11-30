@@ -6,6 +6,10 @@ const BASE_SEARCH_URL = "https://api.github.com/search/users";
 /**
  * Existing: fetch a single GitHub user by username.
  */
+/**
+ * Fetch a single GitHub user's data by username.
+ * GitHub API endpoint: https://api.github.com/users/{username}
+ */
 export const fetchUserData = async (username) => {
   const trimmed = username.trim();
   if (!trimmed) throw new Error("Username is required");
