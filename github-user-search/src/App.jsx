@@ -5,29 +5,22 @@ import './App.css'
 import "./index.css";
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
+import "./index.css";
+import Search from "./components/Search";
 
 function App() {
   return (
     <div className="app">
       <header className="app-header">
         <h1>GitHub User Search</h1>
-        <p>Search for GitHub profiles and view basic info.</p>
+        <p>Search for GitHub users by username.</p>
       </header>
 
       <main className="app-main">
-        <SearchBar />
-
-        {/* Temporary static example – will be replaced with real search results */}
-        <section className="results">
-          <h2>Example Result (Static)</h2>
-          <UserCard
-            username="octocat"
-            avatarUrl="https://github.com/octocat.png"
-            profileUrl="https://github.com/octocat"
-          />
-        </section>
+        <Search />
       </main>
     </div>
   );
 }
 export default App;
+

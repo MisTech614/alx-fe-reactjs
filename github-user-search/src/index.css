@@ -66,3 +66,82 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #0d1117;
+  color: #f0f6fc;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-main {
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  background-color: #161b22;
+  color: inherit;
+}
+
+.search-button {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #238636;
+  color: #f0f6fc;
+  cursor: pointer;
+}
+
+.search-result p {
+  margin-top: 0.5rem;
+}
+
+.user-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  text-align: center;
+}
+
+.user-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.user-card a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+.user-card a:hover {
+  text-decoration: underline;
+}
