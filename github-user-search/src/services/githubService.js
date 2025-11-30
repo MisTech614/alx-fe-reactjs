@@ -8,6 +8,7 @@ const BASE_SEARCH_URL = "https://api.github.com/search/users";
  */
 /**
  * Fetch a single GitHub user's data by username.
+ * Base search from : https://api.github.com/search/users
  * GitHub API endpoint: https://api.github.com/users/{username}
  */
 export const fetchUserData = async (username) => {
