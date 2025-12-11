@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Optional: basic reset / app-wide styles */
+body {
+  background-color: #f1f5f9; /* slate-100 */
+  color: #0f172a;            /* slate-900 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
