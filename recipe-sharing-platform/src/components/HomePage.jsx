@@ -16,7 +16,7 @@ export default function HomePage() {
         <p className="text-sm text-slate-600">{recipes.length} recipes</p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {recipes.map((recipe) => (
           <article
             key={recipe.id}
