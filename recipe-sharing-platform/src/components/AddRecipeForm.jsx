@@ -56,14 +56,14 @@ export default function AddRecipeForm() {
   };
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <div className="mx-auto max-w-3xl px-4 py-8 md:px-6">
       <h2 className="text-2xl font-bold text-slate-900 mb-6">
         Add New Recipe
       </h2>
 
       <form
-        onSubmit={handleSubmit}
-        className="space-y-6 rounded-2xl bg-white p-6 shadow-sm border"
+          onSubmit={handleSubmit}
+          className="space-y-6 rounded-2xl bg-white p-4 md:p-6 shadow-sm border"
       >
         {/* Title */}
         <div>
