@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import RecipeDetail from "./components/RecipeDetail";
+import AddRecipeForm from "./components/AddRecipeForm";
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
             <h1 className="text-2xl font-bold text-emerald-600">
               Recipe Sharing Platform
             </h1>
-            <button className="rounded-full border px-4 py-2 text-sm font-medium text-emerald-600 hover:bg-emerald-50">
+            <Link
+                to="/add"
+                  className="rounded-full border px-4 py-2 text-sm font-medium text-emerald-600 hover:bg-emerald-50">
               Add Recipe
-            </button>
+            </Link>
           </div>
         </header>
 
@@ -55,6 +58,7 @@ function App() {
 
             {/* RECIPE DETAIL PAGE */}
             <Route path="/recipe/:id" element={<RecipeDetail />} />
+            <Route path="/add" element={<AddRecipeForm />} />
           </Routes>
         </main>
 
@@ -68,4 +72,4 @@ function App() {
     </BrowserRouter>
   );
 }
-export default App;
+export default App; 
