@@ -2,6 +2,7 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import RegistrationForm from "./components/RegistrationForm";
 import FormikForm from "./components/formikForm";
 
+
 export default function App() {
   return (
     <div style={{ padding: 20, fontFamily: "system-ui, Arial" }}>
