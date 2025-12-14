@@ -16,6 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<RegistrationForm />} />
         <Route path="/formik" element={<FormikForm />} />
+
       </Routes>
     </div>
   );
