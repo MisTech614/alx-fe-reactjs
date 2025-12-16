@@ -1,4 +1,5 @@
 export default function ProfileSettings() {
-    return <p>Profile Settings section</p>;
+    return <p>Profile Settings Section</p>;
   }
+  
   

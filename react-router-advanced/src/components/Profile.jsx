@@ -5,10 +5,10 @@ export default function Profile() {
     <div>
       <h2>Profile</h2>
 
-      <div style={{ display: "flex", gap: 12, marginBottom: 12 }}>
+      <nav style={{ display: "flex", gap: 12, marginBottom: 12 }}>
         <NavLink to="details">ProfileDetails</NavLink>
         <NavLink to="settings">ProfileSettings</NavLink>
-      </div>
+      </nav>
 
       <Outlet />
     </div>
