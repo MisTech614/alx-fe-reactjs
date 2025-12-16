@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -11,6 +13,7 @@ import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
       <div style={{ padding: 20, fontFamily: "system-ui, Arial" }}>
         <h1>React Router Advanced</h1>
@@ -35,6 +38,7 @@ export default function App() {
         </Routes>
       </div>
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 

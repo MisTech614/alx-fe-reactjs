@@ -1,15 +1,18 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { login } from "../auth";
+import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
+  const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+
   const from = location.state?.from || "/profile";
 
   return (
     <div>
       <h2>Login</h2>
-      <p>This is a simulated login.</p>
+      <p>Simulated login (no backend)</p>
+
       <button
         onClick={() => {
           login();
