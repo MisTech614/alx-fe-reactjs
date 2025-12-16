@@ -23,7 +23,8 @@ export default function App() {
 
           {/* Dynamic routing */}
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:postId" element={<BlogPost />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+
 
           {/* Protected routes */}
           <Route element={<ProtectedRoute />}>
