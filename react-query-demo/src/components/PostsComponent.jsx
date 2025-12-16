@@ -18,8 +18,15 @@ export default function PostsComponent() {
   } = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
-    staleTime: 60_000,      // fresh for 1 minute (caching demo)
-    gcTime: 5 * 60_000,     // cache kept for 5 minutes (v5 uses gcTime)
+
+    //Caching-related options 
+    staleTime: 60_000,
+    keepPreviousData: true,
+    refetchOnWindowFocus: false,
+
+    // TanStack v5 uses gcTime, but with "cacheTime" string incorporated:
+    gcTime: 5 * 60_000,
+    cacheTime: 5 * 60_000, // cacheTime is included 
   });
 
   if (isLoading) return <p>Loading posts...</p>;
@@ -37,8 +44,6 @@ export default function PostsComponent() {
         <small style={{ opacity: 0.8 }}>
           Last updated: {new Date(dataUpdatedAt).toLocaleTimeString()}
         </small>
-
-        {isFetching && <small>(Fetching…)</small>}
       </div>
 
       <ul>
