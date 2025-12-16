@@ -1,4 +1,6 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Routes, Route, Navigate } from "react-router-dom";
+import ProfileDetails from "./ProfileDetails";
+import ProfileSettings from "./ProfileSettings";
 
 export default function Profile() {
   return (
@@ -10,7 +12,12 @@ export default function Profile() {
         <NavLink to="settings">ProfileSettings</NavLink>
       </nav>
 
-      <Outlet />
+      {/* Nested routes inside Profile ( Routes + Route) */}
+      <Routes>
+        <Route index element={<Navigate to="details" replace />} />
+        <Route path="details" element={<ProfileDetails />} />
+        <Route path="settings" element={<ProfileSettings />} />
+      </Routes>
     </div>
   );
 }
