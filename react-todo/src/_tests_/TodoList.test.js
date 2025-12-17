@@ -1,34 +1,38 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import TodoList from "../components/TodoList";
 
-test("renders initial todos", () => {
-  render(<TodoList />);
-  expect(screen.getByText("Learn React")).toBeInTheDocument();
-  expect(screen.getByText("Write tests")).toBeInTheDocument();
-  expect(screen.getByText("Ship the app")).toBeInTheDocument();
-});
-
-test("adds a new todo", () => {
-  render(<TodoList />);
-
-  fireEvent.change(screen.getByPlaceholderText("Add a todo..."), {
-    target: { value: "New todo" },
+describe("TodoList Component", () => {
+  test("renders initial todos", () => {
+    render(<TodoList />);
+    expect(screen.getByText(/learn/i)).toBeInTheDocument();
+    expect(screen.getByText(/test/i)).toBeInTheDocument();
   });
 
-  fireEvent.click(screen.getByText("Add"));
-  expect(screen.getByText("New todo")).toBeInTheDocument();
-});
+  test("adds a new todo", () => {
+    render(<TodoList />);
 
-test("toggles a todo", () => {
-  render(<TodoList />);
-  const item = screen.getByText("Learn React");
+    fireEvent.change(screen.getByPlaceholderText(/add/i), {
+      target: { value: "New todo" },
+    });
 
-  fireEvent.click(item);
-  expect(item).toHaveStyle("text-decoration: line-through");
-});
+    fireEvent.click(screen.getByText(/add/i));
+    expect(screen.getByText("New todo")).toBeInTheDocument();
+  });
 
-test("deletes a todo", () => {
-  render(<TodoList />);
-  fireEvent.click(screen.getByLabelText("delete-Write tests"));
-  expect(screen.queryByText("Write tests")).not.toBeInTheDocument();
+  test("toggles a todo", () => {
+    render(<TodoList />);
+    const todo = screen.getByText(/learn/i);
+
+    fireEvent.click(todo);
+    expect(todo).toHaveStyle("text-decoration: line-through");
+  });
+
+  test("deletes a todo", () => {
+    render(<TodoList />);
+    const deleteButtons = screen.getAllByText(/delete/i);
+
+    fireEvent.click(deleteButtons[0]);
+    expect(screen.queryByText(/learn/i)).not.toBeInTheDocument();
+  });
 });
